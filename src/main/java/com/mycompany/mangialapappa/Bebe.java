@@ -4,6 +4,8 @@
  */
 package com.mycompany.mangialapappa;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  *
  * @author frida
@@ -20,7 +22,7 @@ public class Bebe implements Runnable {
         try {
             while (true) {
                 piatto.consume();
-                Thread.sleep(1000); // Simula tempo di consumo
+                Thread.sleep(ThreadLocalRandom.current().nextLong(1000)); // Simula tempo di consumo
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

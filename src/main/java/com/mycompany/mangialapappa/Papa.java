@@ -4,6 +4,8 @@
  */
 package com.mycompany.mangialapappa;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  *
  * @author frida
@@ -21,7 +23,7 @@ public class Papa implements Runnable {
         try {
             while (true) {
                 piatto.produce(value++);
-                Thread.sleep(500); // Simula tempo di produzione
+                Thread.sleep(ThreadLocalRandom.current().nextLong(1000)); // Simula tempo di produzione
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
